@@ -33,7 +33,7 @@ import { HomeModule } from './home/home.module';
     AppRoutingModule,
     HomeModule
   ],
-  exports: [ SignupComponent, ],
+  exports: [  ],
   providers: [],
   bootstrap: [AppComponent]
 })
