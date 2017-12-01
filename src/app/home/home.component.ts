@@ -7,28 +7,28 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     styleUrls: ['./home.component.scss'],
     animations: [
         trigger('divState', [
-            state('fadein', style({
-                opacity: 1,
-            })),
-            state('fadeout',   style({
-                opacity: 0,
-            })),
-            transition('fadeout => fadein', animate('500ms ease-in')),
-            transition('fadein => fadeout', animate('500ms ease-out'))
+          state('in', style({transform: 'translateX(0)'})),
+          transition('void => *', [
+            style({transform: 'translateX(-100%)'}),
+            animate(100)
+          ]),
+          transition('* => void', [
+            animate(100, style({transform: 'translateX(100%)'}))
           ])
-    ]
+        ])
+      ]
 })
 
 export class HomeComponent implements OnInit {
 
 
+    status = true;
+    public state = 'in';
 
-    public state = 'fadein';
-    public reversestate = 'fadeout'
     toggleState() {
+        this.status = !this.status;
 
-        this.state = this.state === 'fadein' ? 'fadeout' : 'fadein';
-        this.reversestate = this.reversestate === 'fadeout' ? 'fadein' : 'fadeout';
+
     }
 
 

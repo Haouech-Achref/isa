@@ -3,7 +3,7 @@
         <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
         <div class="filter"></div>
         <div class="content-center">
-            <div class="container  animated" [@divState]="state" style="position: fixed;">
+            <div class="container  animated" *ngIf="status" [@divState]>
                 <div class="title-brand">
                     <div class="angular-logo">
                     </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="content-center animated" [@divState]="reversestate">
+        <div class="content-center animated" *ngIf="!status" [@divState]>
                 <div class="container">
                     <div class="title-brand">
                         <h6 class="presentation-title">Sign in</h6>
