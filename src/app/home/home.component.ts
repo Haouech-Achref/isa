@@ -8,8 +8,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     animations: [
         trigger('divState', [
           transition('void => *', [
-            style({opacity: 1}),
-            animate('1000ms ease-in')
+            style({opacity: 0}),
+            animate('1000ms ease-out')
           ]),
           transition('* => void', [
             animate('1000ms ease-out'), style({opacity: 0})
