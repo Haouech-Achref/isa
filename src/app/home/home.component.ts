@@ -26,11 +26,21 @@ export class HomeComponent implements OnInit {
         right: false
     };
     status = true;
+    statuslogin = false;
     toggleState() {
 
         this.status = !this.status;
+        setTimeout(() => {
+            this.statuslogin = !this.statuslogin;
+        }, 1000);
     }
-
+    toggleStateLogin() {
+        
+                this.statuslogin = !this.statuslogin;
+                setTimeout(() => {
+                    this.status = !this.status;
+                }, 1000);
+            }
 
 
     constructor() { }

@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <div class="content-center animated" *ngIf="!status" [@divState]>
+        <div class="content-center animated" *ngIf="statuslogin" [@divState]>
                 <div class="container">
                     <div class="title-brand">
                         <h6 class="presentation-title">Sign in</h6>
@@ -75,7 +75,7 @@
                                 <input id="password" type="password" placeholder="Password" class="form-control">
                                 <button id="confirm" type="submit" class="btn btn-outline-success btn-round col-md-5">Submit</button>
                                 <button id="reset" type="reset" class="btn btn-outline-neutral btn-round col-md-5">Reset</button>
-                                <button id="back" type="button" class="btn btn-outline-neutral btn-round pull-left" style="margin-top: 10px;" (click)="toggleState()">Back</button>
+                                <button id="back" type="button" class="btn btn-outline-neutral btn-round pull-left" style="margin-top: 10px;" (click)="toggleStateLogin()">Back</button>
                             </form>
                         </div>
                     </div>
