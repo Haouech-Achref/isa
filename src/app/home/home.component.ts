@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
         }, 1000);
     }
     toggleStateLogin() {
-        
+
                 this.statuslogin = !this.statuslogin;
                 setTimeout(() => {
                     this.status = !this.status;
