@@ -7,13 +7,12 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     styleUrls: ['./home.component.scss'],
     animations: [
         trigger('divState', [
-          state('in', style({transform: 'translateX(0)'})),
           transition('void => *', [
-            style({transform: 'translateX(-100%)'}),
-            animate(100)
+            style({opacity: 1}),
+            animate('1000ms ease-in')
           ]),
           transition('* => void', [
-            animate(100, style({transform: 'translateX(100%)'}))
+            animate('1000ms ease-out'), style({opacity: 0})
           ])
         ])
       ]
@@ -23,7 +22,6 @@ export class HomeComponent implements OnInit {
 
 
     status = true;
-    public state = 'in';
 
     toggleState() {
         this.status = !this.status;
