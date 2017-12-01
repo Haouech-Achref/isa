@@ -3,7 +3,7 @@
         <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
         <div class="filter"></div>
         <div class="content-center">
-            <div class="container">
+            <div class="container  animated" [@divState]="state" style="position: fixed;">
                 <div class="title-brand">
                     <div class="angular-logo">
                     </div>
@@ -18,10 +18,68 @@
 
                 <h2 class="presentation-subtitle text-center">Please sign in or sign up to continue.</h2>
                 <div class="row d-flex justify-content-center" style="margin: 25px;">
-                    <button class="btn btn-outline-neutral btn-round " style="margin-right:25px;">Sign in</button>
-                    <button class="btn btn-outline-neutral btn-round "  >Sign up</button>
+                    <button  class="btn btn-outline-neutral btn-round animated" (click)="toggleState()" style="margin-right:25px;">Sign in</button>
+                    <button class="btn btn-outline-neutral btn-round animated"   >Sign up</button>
                 </div>
             </div>
         </div>
+        <div class="content-center animated" [hidden]= "'true'">
+            <div class="container">
+                <div class="title-brand">
+                    <h6 class="presentation-title">Sign up </h6>
+                    <div class="fog-low">
+                        <img src="assets/img/fog-low.png" alt="">
+                    </div>
+                    <div class="fog-low right">
+                        <img src="assets/img/fog-low.png" alt="">
+                    </div>
+                    <div class="card" id="formcard">
+                        <form class="form-group">
+                            <input id="name" type="text" placeholder="Name" class="form-control" >
+                            <input id="lastname" type="text" placeholder="Last name" class="form-control">
+                            <input id="phone" type="text" placeholder="Phone number" class="form-control">
+                            <input id="email" type="email" placeholder="Email" class="form-control">
+                            <select class="form-control" id="field">
+                                <option disabled>Study field</option>
+                                <option value="bio">BIO</option>
+                                <option value="cba">CBA</option>
+                                <option value="ch">CH</option>
+                                <option value="gl">GL</option>
+                                <option value="iia">IIA</option>
+                                <option value="imi">IMI</option>
+                                <option value="mpi">MPI</option>
+                                <option value="rt">RT</option>
+                            </select>
+                            <input id="password" type="password" placeholder="Password" class="form-control">
+                            <input id="confirm_password" type="password" placeholder="Confirm password" class="form-control">
+                            <button id="confirm" type="submit" class="btn btn-outline-success btn-round col-md-5">Submit</button>
+                            <button id="reset" type="reset" class="btn btn-outline-neutral btn-round col-md-5">Reset</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-center animated" [@divState]="reversestate">
+                <div class="container">
+                    <div class="title-brand">
+                        <h6 class="presentation-title">Sign in</h6>
+                        <div class="fog-low">
+                            <img src="assets/img/fog-low.png" alt="">
+                        </div>
+                        <div class="fog-low right">
+                            <img src="assets/img/fog-low.png" alt="">
+                        </div>
+                        <div class="card" id="formcard">
+                            <form class="form-group">
+                                <input id="email" type="email" placeholder="Email" class="form-control" >
+                                <input id="password" type="password" placeholder="Password" class="form-control">
+                                <button id="confirm" type="submit" class="btn btn-outline-success btn-round col-md-5">Submit</button>
+                                <button id="reset" type="reset" class="btn btn-outline-neutral btn-round col-md-5">Reset</button>
+                                <button id="back" type="button" class="btn btn-outline-neutral btn-round pull-left" style="margin-top: 10px;" (click)="toggleState()">Back</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </div>
