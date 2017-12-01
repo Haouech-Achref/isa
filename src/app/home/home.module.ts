@@ -11,6 +11,9 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { ComponentsModule } from '../components/components.module';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
 @NgModule({
     imports: [
         CommonModule,
