@@ -20,7 +20,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export class HomeComponent implements OnInit {
 
-
+    model = {
+        left: true,
+        middle: false,
+        right: false
+    };
     status = true;
     toggleState() {
 
@@ -28,11 +32,7 @@ export class HomeComponent implements OnInit {
     }
 
 
-    model = {
-        left: true,
-        middle: false,
-        right: false
-    };
+
     constructor() { }
 
     ngOnInit() {}
