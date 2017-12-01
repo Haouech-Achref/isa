@@ -8,11 +8,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     animations: [
         trigger('divState', [
           transition('void => *', [
-            style({opacity: 0}),
-            animate('1000ms ease-out')
+            style({opacity: 0, transform: 'translate(-100%)'}),
+            animate('500ms ease-out')
           ]),
           transition('* => void', [
-            animate('1000ms ease-out'), style({opacity: 0})
+            animate('500ms ease-in'), style({opacity: 0, transform: 'translateX(100%)'})
           ])
         ])
       ]
@@ -25,21 +25,21 @@ export class HomeComponent implements OnInit {
         middle: false,
         right: false
     };
-    status = true;
-    statuslogin = false;
+    state = true;
+    statelogin = false;
     toggleState() {
 
-        this.status = !this.status;
+        this.state = !this.state;
         setTimeout(() => {
-            this.statuslogin = !this.statuslogin;
-        }, 1000);
+            this.statelogin = !this.statelogin;
+        }, 500);
     }
     toggleStateLogin() {
 
-                this.statuslogin = !this.statuslogin;
+                this.statelogin = !this.statelogin;
                 setTimeout(() => {
-                    this.status = !this.status;
-                }, 1000);
+                    this.state = !this.state;
+                }, 500);
             }
 
 

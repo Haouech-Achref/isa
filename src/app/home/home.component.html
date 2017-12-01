@@ -3,7 +3,7 @@
         <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
         <div class="filter"></div>
         <div class="content-center">
-            <div class="container  animated" *ngIf="status" [@divState]>
+            <div class="container  animated" *ngIf="state" [@divState]>
                 <div class="title-brand">
                     <div class="angular-logo">
                     </div>
@@ -19,7 +19,6 @@
                 <h2 class="presentation-subtitle text-center">Please sign in or sign up to continue.</h2>
                 <div class="row d-flex justify-content-center" style="margin: 25px;">
                     <button  class="btn btn-outline-neutral btn-round animated" (click)="toggleState()" style="margin-right:25px;">Sign in</button>
-                    <button class="btn btn-outline-neutral btn-round animated"   >Sign up</button>
                 </div>
             </div>
         </div>
@@ -62,7 +61,7 @@
             </div>
         </div>
 <!--  Sign in form -->  
-        <div class="content-center animated" *ngIf="statuslogin" [@divState]>
+        <div class="content-center animated" *ngIf="statelogin" [@divState]>
                 <div class="container">
                     <div class="title-brand">
                         <h6 class="presentation-title">Sign in</h6>
