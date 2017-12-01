@@ -22,11 +22,9 @@ export class HomeComponent implements OnInit {
 
 
     status = true;
-
     toggleState() {
+
         this.status = !this.status;
-
-
     }
 
 
