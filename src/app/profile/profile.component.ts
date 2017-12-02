@@ -6,15 +6,24 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     templateUrl: './profile.component.html',
     styleUrls: ['./profile.component.scss'],
     animations: [
-        trigger('divState', [
+        trigger('compState', [
           transition('void => *', [
-            style({opacity: 0, transform: 'translate(-100%)'}),
-            animate('500ms ease-out')
+            style({opacity: 0}),
+            animate('1s ease-out')
           ]),
           transition('* => void', [
-            animate('500ms ease-in'), style({opacity: 0, transform: 'translateX(100%)'})
+            animate('1s ease-in'), style({opacity: 0})
           ])
-        ])
+        ]),
+        trigger('divState', [
+            transition('void => *', [
+              style({opacity: 0, transform: 'translate(-100%)'}),
+              animate('500ms ease-out')
+            ]),
+            transition('* => void', [
+              animate('500ms ease-in'), style({opacity: 0, transform: 'translateX(100%)'})
+            ])
+          ])
       ]
 })
 

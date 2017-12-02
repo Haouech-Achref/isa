@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -6,6 +6,15 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss'],
     animations: [
+        trigger('compState', [
+            transition('void => *', [
+              style({opacity: 0}),
+              animate('1s ease-out')
+            ]),
+            transition('* => void', [
+              animate('1s ease-in'), style({opacity: 0}),
+            ])
+          ]),
         trigger('divState', [
           transition('void => *', [
             style({opacity: 0, transform: 'translate(-100%)'}),
@@ -25,6 +34,7 @@ export class HomeComponent implements OnInit {
         middle: false,
         right: false
     };
+    compstate: boolean;
     state = true;
     statelogin = false;
     toggleState() {
@@ -45,5 +55,8 @@ export class HomeComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() {}
+// for animation purposes
+
+    ngOnInit() { }
+
 }

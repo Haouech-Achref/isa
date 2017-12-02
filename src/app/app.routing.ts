@@ -9,9 +9,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 
-const routes: Routes =[
+const routes: Routes = [
     { path: 'home',             component: HomeComponent },
-    { path: 'profile',          component: ProfileComponent },
+    { path: 'profile/:id',          component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },

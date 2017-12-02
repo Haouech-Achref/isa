@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MemberService } from './../../services/member/member.service';
 import { Members } from '../../models/members';
 import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -7,7 +8,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
-  providers:[MemberService],
+  providers:[ MemberService ],
   animations: [
     trigger('divState', [
       transition('void => *', [
@@ -27,7 +28,7 @@ export class SigninComponent implements OnInit {
   members: Members[];
   loginmember: Members;
   member: Members = new Members();
-  constructor(private memberService: MemberService) { }
+  constructor(private memberService: MemberService, private router: Router) { }
 
   toggle(): void {
     this.toggleSignin.emit(null);
@@ -37,13 +38,13 @@ export class SigninComponent implements OnInit {
   onSubmit(): void
   {
     this.loginmember = this.members.find(mem => this.member.email === mem.email);
-    if(this.loginmember === undefined)
+    if(this.loginmember === undefined || this.loginmember.password !== this.member.password)
     {
       this.failure = true;
     }
     else
     {
-      console.log('success');
+      this.router.navigate(['profile/', this.loginmember.id])
     }
   }
   ngOnInit() {
