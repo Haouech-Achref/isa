@@ -3,16 +3,16 @@ import { Teams } from 'app/models/teams';
 
 
 export class Members {
-    id:number;
+    id?: number;
     email: string ;
-    github: string ;
-    inscriptionDate: string ;
+    github?: string ;
+    inscriptionDate?: string ;
     lastName: string ;
     name: string ;
     level: string ;
     phone: number ;
-    section :string ;
+    section: string ;
     password: string;
-    manageteams : Teams [];
+    manageteams: Teams [];
 
 }
