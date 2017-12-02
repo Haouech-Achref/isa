@@ -13,6 +13,7 @@ export class Members {
     phone: number ;
     section: string ;
     password: string;
+    description: string;
     manageteams: Teams [];
 
 }

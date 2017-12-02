@@ -1,3 +1,4 @@
+import { Members } from '../models/members';
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
@@ -29,6 +30,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export class ProfileComponent implements OnInit {
 
+    member: Members;
     state = true;
     statelogin = false;
     toggleState() {
@@ -47,6 +49,8 @@ export class ProfileComponent implements OnInit {
             }
     constructor() { }
 
-    ngOnInit() {}
+    ngOnInit() {
+        this.member = JSON.parse(sessionStorage.getItem('member'));
+    }
 
 }

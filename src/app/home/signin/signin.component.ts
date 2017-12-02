@@ -38,12 +38,12 @@ export class SigninComponent implements OnInit {
   onSubmit(): void
   {
     this.loginmember = this.members.find(mem => this.member.email === mem.email);
-    if(this.loginmember === undefined || this.loginmember.password !== this.member.password)
+    if (this.loginmember === undefined || this.loginmember.password !== this.member.password)
     {
       this.failure = true;
     }
-    else
-    {
+    else {
+      sessionStorage.setItem('member', JSON.stringify(this.loginmember));
       this.router.navigate(['profile/', this.loginmember.id])
     }
   }

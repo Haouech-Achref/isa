@@ -9,14 +9,15 @@
                     <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                 </div>
                 <div class="name">
-                    <h4 class="title">NAME and LASTNAME<br /></h4>
+                    <h4 class="title">{{member.name}} {{member.lastname}}<br /></h4>
                     <h6 class="description">ROLE</h6>
                 </div>
             </div>
             <div *ngIf="state" [@divState]>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
-                        <p>No description yet. </p>
+                        <p *ngIf="member.description === undefined">No description available.</p>
+                        <p>{{member.description}}</p>
                         <br />
                         <button (click)="toggleState()" class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</button>
                     </div>
