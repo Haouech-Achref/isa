@@ -12,6 +12,7 @@ import { HomeComponent } from './home.component';
 import { ComponentsModule } from '../components/components.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
         ComponentsModule,
         BrowserAnimationsModule,
     ],
-    declarations: [ HomeComponent ],
+    declarations: [ HomeComponent, SigninComponent ],
     exports: [ HomeComponent ],
     providers: []
 })

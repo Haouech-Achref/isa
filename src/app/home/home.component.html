@@ -61,27 +61,6 @@
             </div>
         </div>
 <!--  Sign in form -->  
-        <div class="content-center animated" *ngIf="statelogin" [@divState]>
-                <div class="container">
-                    <div class="title-brand">
-                        <h6 class="presentation-title">Sign in</h6>
-                        <div class="fog-low">
-                            <img src="assets/img/fog-low.png" alt="">
-                        </div>
-                        <div class="fog-low right">
-                            <img src="assets/img/fog-low.png" alt="">
-                        </div>
-                        <div class="card" id="formcard">
-                            <form class="form-group">
-                                <input id="email" type="email" placeholder="Email" class="form-control" >
-                                <input id="password" type="password" placeholder="Password" class="form-control">
-                                <button id="confirm" type="submit" class="btn btn-outline-success btn-round col-md-5">Submit</button>
-                                <button id="reset" type="reset" class="btn btn-outline-neutral btn-round col-md-5">Reset</button>
-                                <button id="back" type="button" class="btn btn-outline-neutral btn-round pull-left" style="margin-top: 10px;" (click)="toggleStateLogin()">Back</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <app-signin  *ngIf="statelogin" [@divState] (toggleSignin)="toggleStateSignin()" ></app-signin>
     </div>
 </div>

@@ -1,0 +1,22 @@
+<div class="content-center animated">
+  <div class="container">
+      <div class="title-brand">
+          <h6 class="presentation-title">Sign in</h6>
+          <div class="fog-low">
+              <img src="assets/img/fog-low.png" alt="">
+          </div>
+          <div class="fog-low right">
+              <img src="assets/img/fog-low.png" alt="">
+          </div>
+          <div class="card" id="formcard">
+              <form class="form-group" (ngSubmit)="onSubmit()" #signinForm="ngForm" >
+                  <input name="email" [(ngModel)]="member.email" id="email" type="text" placeholder="Email" class="form-control" required>
+                  <input name="password" [(ngModel)]="member.password" id="password" type="password" placeholder="Password" class="form-control" required>
+                  <button id="confirm" type="submit" class="btn btn-outline-success btn-round col-md-5" [disabled]="!signinForm.valid">Submit</button>
+                  <button id="reset" type="reset" class="btn btn-outline-neutral btn-round col-md-5">Reset</button>
+                  <button id="back" type="button" class="btn btn-outline-neutral btn-round pull-left" style="margin-top: 25px;" (click)="toggle()">Back</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
