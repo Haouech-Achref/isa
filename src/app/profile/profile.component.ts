@@ -10,7 +10,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         trigger('compState', [
           transition('void => *', [
             style({opacity: 0}),
-            animate('1s ease-out')
+            animate('1.5s ease-out')
           ]),
           transition('* => void', [
             animate('1s ease-in'), style({opacity: 0})
