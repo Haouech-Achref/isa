@@ -10,7 +10,7 @@
                 </div>
                 <div class="name">
                     <h4 class="title">{{member.name}} {{member.lastname}}<br /></h4>
-                    <h6 class="description">ROLE</h6>
+                    <h6 class="description" [ngClass]="{'red': member.role === 'webmaster'}" >{{member.role}}</h6>
                 </div>
             </div>
             <!-- profile details -->

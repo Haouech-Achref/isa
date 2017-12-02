@@ -15,5 +15,6 @@ export class Members {
     password: string;
     description: string;
     manageteams: Teams [];
+    role: string;
 
 }
