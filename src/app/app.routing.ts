@@ -1,3 +1,4 @@
+import { ProjectComponent } from './project/project.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -14,7 +15,7 @@ const routes: Routes = [
     { path: 'profile/:id',          component: ProfileComponent },
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent },
+    { path: 'project',      component: ProjectComponent },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
