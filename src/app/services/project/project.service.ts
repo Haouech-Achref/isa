@@ -34,7 +34,6 @@ export class ProjectService {
 
   }
   getProject (id): Observable<Project> {
-    console.log(this.url + '/' +  id);
     return this.http.get<Project>(this.url + '/' +  id)
       .pipe(
         catchError(this.handleError('getProject name: ${name}', null))
