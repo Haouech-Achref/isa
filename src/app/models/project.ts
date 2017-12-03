@@ -1,7 +1,7 @@
 import { Reservations } from './reservations';
 import { ToDoLists } from './to-do-lists';
 
-export class Projects {
+export class Project {
     id : number ;
     description : string;
     name : string ;

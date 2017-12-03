@@ -1,5 +1,5 @@
 <div class="wrapper" [@compState]>
-    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/background/achrefhaouech.jpeg');">
+    <div class="page-header page-header-xs z-depth-5" data-parallax="true" style="background-image: url('../assets/img/background/achrefhaouech.jpeg');">
         <div class="filter"></div>
     </div>
     <div class="section profile-content">
@@ -9,8 +9,10 @@
                     <img src="../assets/img/profile_pictures/achrefhaouech.jpg" alt="Circle Image" class="img-thumbnail  img-responsive">
                 </div>
                 <div class="name">
-                    <h4 class="title">{{member.name}} {{member.lastname}}<br /></h4>
-                    <h6 class="description" [ngClass]="{'red': member.role === 'webmaster'}" >{{member.role}}</h6>
+                    <h4 class="title">{{member.name}} {{member.lastname}}
+                        <br />
+                    </h4>
+                    <h6 class="description" [ngClass]="{'red': member.role === 'webmaster'}">{{member.role}}</h6>
                 </div>
             </div>
             <!-- profile details -->
@@ -20,7 +22,8 @@
                         <p *ngIf="member.description === undefined">No description available.</p>
                         <p>{{member.description}}</p>
                         <br />
-                        <button (click)="toggleState()" class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</button>
+                        <button (click)="toggleState()" class="btn btn-outline-default btn-round">
+                            <i class="fa fa-cog"></i> Settings</button>
                     </div>
                 </div>
                 <br/>
@@ -28,17 +31,20 @@
                     <div class="nav-tabs-wrapper">
                         <ngb-tabset [justify]="'center'">
                             <ngb-tab title="Projects">
-                                <ng-template ngbTabContent >
-                                    <div class="row following" id="follows">
+                                <ng-template ngbTabContent>
+                                    <div class="row following">
                                         <div class="col-md-6 ml-auto mr-auto">
                                             <ul class="list-unstyled follows">
                                                 <li>
                                                     <div class="row">
                                                         <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                                        
+
                                                         </div>
                                                         <div class="col-md-7 col-sm-4 ml-auto">
-                                                            <h6>Some project<br/><small>Some project description</small></h6>
+                                                            <h6>Some project
+                                                                <br/>
+                                                                <small>Some project description</small>
+                                                            </h6>
                                                         </div>
                                                         <div class="col-md-3 col-sm-2 ml-auto mr-auto">
                                                         </div>
@@ -57,53 +63,59 @@
                                 </ng-template>
                             </ngb-tab>
                             <ngb-tab title="Contact">
-                                    <ng-template ngbTabContent>
-                                            <div class="row following" id="follows">
-                                                    <div class="col-md-6 ml-auto mr-auto">
-                                                        <ul class="list-unstyled follows">
-                                                            <li>
-                                                                <div class="row">
-                                                                    <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                                                    
-                                                                    </div>
-                                                                    <div class="col-md-7 col-sm-4 ml-auto">
-                                                                        <h6>Email<br/><small>{{member.email}}</small></h6>
-                                                                    </div>
-                                                                    <div class="col-md-3 col-sm-2 ml-auto mr-auto">
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <hr />
-                                                            <li>
-                                                                    <div class="row">
-                                                                        <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                                                        
-                                                                        </div>
-                                                                        <div class="col-md-7 col-sm-4 ml-auto">
-                                                                            <h6>Phone number<br/><small>{{member.phone}}</small></h6>
-                                                                        </div>
-                                                                        <div class="col-md-3 col-sm-2 ml-auto mr-auto">
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                                <hr />
-                                                        </ul>
+                                <ng-template ngbTabContent>
+                                    <div class="row following" id="follows">
+                                        <div class="col-md-6 ml-auto mr-auto">
+                                            <ul class="list-unstyled follows">
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-4 ml-auto">
+                                                            <h6>Email
+                                                                <br/>
+                                                                <small>{{member.email}}</small>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                    </ng-template>
-                                </ngb-tab>
+                                                </li>
+                                                <hr />
+                                                <li>
+                                                    <div class="row">
+                                                        <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+
+                                                        </div>
+                                                        <div class="col-md-7 col-sm-4 ml-auto">
+                                                            <h6>Phone number
+                                                                <br/>
+                                                                <small>{{member.phone}}</small>
+                                                            </h6>
+                                                        </div>
+                                                        <div class="col-md-3 col-sm-2 ml-auto mr-auto">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <hr />
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ngb-tab>
                         </ngb-tabset>
                     </div>
                 </div>
             </div>
-        <!-- settings edit -->
+            <!-- settings edit -->
             <div class="content-center" *ngIf="statelogin" [@divState]>
                 <div class="container">
                     <div class="title-brand">
                         <h3 class="title">Edit profile </h3>
                         <hr>
                         <form class="form-group">
-                            <input id="name" type="text" placeholder="Name" class="form-control" >
+                            <input id="name" type="text" placeholder="Name" class="form-control">
                             <br>
                             <input id="lastname" type="text" placeholder="Last name" class="form-control">
                             <br>
@@ -131,7 +143,7 @@
                             <button id="reset" type="reset" class="btn btn-outline-primary btn-round col-md-5">Reset</button>
                             <br>
                             <br>
-                            <button id="back" type="button" class="btn btn-outline-default btn-round col-md-2" (click)="toggleStateSignin()" >Back</button>
+                            <button id="back" type="button" class="btn btn-outline-default btn-round col-md-2" (click)="toggleStateSignin()">Back</button>
                         </form>
                     </div>
                 </div>

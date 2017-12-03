@@ -1,5 +1,5 @@
 import { Equipements } from './Equipements';
-import { Projects } from './Projects';
+import { Project } from './Project';
 
 export class Reservations {
     id : number ;
@@ -7,6 +7,6 @@ export class Reservations {
     date_fin : String ;
 
     equipements : Equipements[];
-    projects : Projects[];
+    projects : Project[];
 
 }

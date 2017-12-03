@@ -16,6 +16,7 @@ const routes: Routes = [
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'project',      component: ProjectComponent },
+    { path: 'project/:id',      redirectTo: 'home', pathMatch: 'full' },
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
