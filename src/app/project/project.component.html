@@ -1,32 +1,29 @@
 <div class="wrapper" [@compState]>
-  <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/project.jpg');">
+  <div class="page-header" data-parallax="true" style="background-image: url('../assets/img/project.jpg');">
     <div class="filter"></div>
-  </div>
-  <div class="main">
-    <div class="section">
-
-
-          <div class="card" id="projectcard">
-          <table class="table table-bordered">
-            <thead class="thead-dark">
-              <tr>
-                <th>#</th>
-                <th>Project name</th>
-                <th>Project manager</th>
-                <th>Project status</th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let proj of projects">
-              <tr class="red"  routerLink="/project/{{proj.id}}"  [ngClass]="{'success': proj.status === 'Done', 'warning': proj.status === 'Halted', 'danger': proj.status === 'Dropped',
-                        'active': proj.status === 'On-going'}" style="cursor: pointer;">
-                <th scope="row">{{proj.id}}</th>
-                <td>{{proj.name}}</td>
-                <td>{{proj.manager}}</td>
-                <td>{{proj.status}}</td>
-              </tr>
-            </tbody>
-          </table>
-
+    <div class="content-center">
+      <h2 class=" text-center" style="color: white;">The following is a list of all projects</h2>
+      <h4 class="text-center" style="color: white;">Click on a project to view more details</h4>
+      <div class="card" id="projectcard">
+        <table class="table table-responsive">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>Project name</th>
+              <th>Project manager</th>
+              <th>Project status</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let proj of projects">
+            <tr routerLink="/project/{{proj.id}}" style="cursor: pointer;">
+              <th scope="row">{{proj.id}}</th>
+              <td>{{proj.name}}</td>
+              <td>{{proj.manager}}</td>
+              <td [ngClass]="{'text-success': proj.status === 'Done', 'text-warning': proj.status === 'Halted', 'text-danger': proj.status === 'Dropped',
+            'text-primary': proj.status === 'On-going'}">{{proj.status}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
