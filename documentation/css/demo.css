@@ -708,7 +708,7 @@
 /*      layer animation          */
 
 .layers-container{
-    display: block;
+    displa y: block;
     margin-top: 50px;
     position: relative;
 }

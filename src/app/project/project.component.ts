@@ -1,50 +1,54 @@
 import { ProjectService } from './../services/project/project.service';
 import { Project } from '../models/project';
-import { Component, OnInit } from '@angular/core'
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css'],
-  providers: [ ProjectService ],
+  providers: [ProjectService],
   animations: [
     trigger('compState', [
-        transition('void => *', [
-          style({opacity: 0}),
-          animate('1.5s ease-out')
-        ]),
-        transition('* => void', [
-          animate('1s ease-in'), style({opacity: 0}),
-        ])
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate('1.5s ease-out')
       ]),
+      transition('* => void', [animate('1s ease-in'), style({ opacity: 0 })])
+    ]),
     trigger('divState', [
       transition('void => *', [
-        style({opacity: 0, transform: 'translate(-100%)'}),
+        style({ opacity: 0, transform: 'translate(-100%)' }),
         animate('500ms ease-out')
       ]),
       transition('* => void', [
-        animate('500ms ease-in'), style({opacity: 0, transform: 'translateX(100%)'})
+        animate('500ms ease-in'),
+        style({ opacity: 0, transform: 'translateX(100%)' })
       ])
     ])
   ]
 })
-
-
-
 export class ProjectComponent implements OnInit {
-
   projects: Project[];
   selectedProject: Project;
   selected = false;
 
   selectProject(project: Project) {
     this.selectedProject = project;
-    }
-  constructor(private projectService: ProjectService) { }
+  }
+  constructor(private projectService: ProjectService) {}
 
   ngOnInit() {
-    this.projectService.getProjects().subscribe(project =>{ this.projects = project; this.selectedProject = this.projects[0]; this.selected = true; });
+    this.projectService.getProjects().subscribe(project => {
+      this.projects = project;
+      this.selectedProject = this.projects[1];
+      this.selected = true;
+    });
   }
-
 }

@@ -1,3 +1,4 @@
+import { Members } from './members';
 import { Reservations } from './reservations';
 import { ToDoLists } from './to-do-lists';
 
@@ -10,6 +11,7 @@ export class Project {
     manager: string;
     reservations: Reservations [];
     toDoLists: ToDoLists [] ;
+    team: Members[];
     
 
 }

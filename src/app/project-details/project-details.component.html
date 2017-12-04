@@ -1,3 +1,4 @@
+<!-- tabs definition -->
 <div class="nav-tabs-navigation">
     <div class="nav-tabs-wrapper">
         <ul class="nav nav-tabs" role="tablist">
@@ -14,29 +15,40 @@
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings</a>
                 <ul class="dropdown-menu ">
                     <div class="dropdown-header" data-toggle="tab" href="#action">Header</div>
-                    <a  class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
                 </ul>
             </li>
         </ul>
     </div>
 </div>
+<!-- tabs content -->
 <div class="tab-content">
+    <!-- Summary -->
     <div class="tab-pane active" id="home" role="tabpanel">
-      <div class="row">
-        <dl class="dl-horizontal">
-            <dt>Title:</dt>
-            <dd>{{project.name}}</dd>
-            <dt>Status:</dt>
-            <dd>{{project.status}}</dd>
-            <dt>Description:</dt>
-            <dd>{{project.description}}</dd>
-        </dl>
-        <div>smth</div>
-      </div>
+        <div class="row">
+            <dl class="dl-horizontal col-md-6" style="border-right: 1px solid beige;">
+                <dt>Title:</dt>
+                <dd>{{project.name}}</dd>
+                <dt>Status:</dt>
+                <dd>{{project.status}}</dd>
+                <dt>Description:</dt>
+                <dd>{{project.description}}</dd>
+            </dl>
+            <div style="padding: 10px 0 0 25px;">
+                <div class="card" *ngFor="let member of project.team">
+                    <div class="container" routerLink="/profile/{{member.id}}">
+                        <dl class="dl d-flex justify-content-center">
+                            <dt>Full name:</dt>
+                            <dd>{{member.name}} {{member.lastname}}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="tab-pane" id="profile" role="tabpanel">Here is your profile.</div>
     <div class="tab-pane" id="messages" role="tabpanel">Here are your messages.</div>
     <div class="tab-pane" id="action" role="tabpanel">Vestibulum ex velit, cursus in mauris in, egestas tempor orci.</div>
     <div class="tab-pane" id="another-action" role="tabpanel">Ut sem metus, lacinia id lobortis vel, mollis ut quam.</div>
-</div> 
+</div>
