@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
   providers: [ProjectService]
 })
 export class ProjectDetailsComponent implements OnInit {
-  @Input() project: Project;
+  @Input() project: Project = new Project();
 
   constructor(
     private projectService: ProjectService,

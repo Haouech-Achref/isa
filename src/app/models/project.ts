@@ -12,6 +12,4 @@ export class Project {
     reservations: Reservations [];
     toDoLists: ToDoLists [] ;
     team: Members[];
-    
-
 }

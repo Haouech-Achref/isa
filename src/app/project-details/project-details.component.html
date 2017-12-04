@@ -35,16 +35,6 @@
                 <dt>Description:</dt>
                 <dd>{{project.description}}</dd>
             </dl>
-            <div style="padding: 10px 0 0 25px;">
-                <div class="card" *ngFor="let member of project.team">
-                    <div class="container" routerLink="/profile/{{member.id}}">
-                        <dl class="dl d-flex justify-content-center">
-                            <dt>Full name:</dt>
-                            <dd>{{member.name}} {{member.lastname}}</dd>
-                        </dl>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="tab-pane" id="profile" role="tabpanel">Here is your profile.</div>

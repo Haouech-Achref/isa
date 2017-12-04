@@ -2,18 +2,44 @@
   <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/project.jpg');">
     <div class="filter"></div>
   </div>
-  <div class="container col-md-10">
-    <div class="row tim-row">
-      <div class="col-md-3">
-        <ul style="list-style: none; border-left: 1px solid beige; cursor: pointer;">
-          <li *ngFor="let project of projects" (click)="selectProject(project)">
-            {{project.name}}
-            <hr>
-          </li>
-        </ul>
-      </div>
-      <div class="content-center col-md-9" style="border-right: 1px solid beige; border-left: 1px solid beige;">
-        <app-project-details *ngIf="selected" [project]="selectedProject" > </app-project-details>
+  <div *ngFor="let project of projects; let i = index;">
+    <div class="section" [ngClass]="{'section-dark': i % 2 === 0}">
+      <div class="container">
+        <div class="row ">
+          <div class="col-md-5 text-center d-flex justify-content-between" style="flex-direction: column">
+            <span>
+              <h1 class="title">{{project.name}}</h1>
+              <p class="description">{{project.description}}</p>
+
+            </span>
+            <span>
+              <h3>Status:</h3>
+              <p class="description" [ngClass]="{'text-danger': project.status === 'Dropped',
+                                               'text-warning': project.status === 'Halted',
+                                               'text-success': project.status === 'Done',
+                                               'text-primary': project.status === 'On-going'}">{{project.status}}</p>
+            </span>
+          </div>
+          <div class="container col-md-5 text-center">
+            <h3>Team members:</h3>
+            <div class="avatar d-flex flex-wrap">
+              <div class="thumbnail" *ngFor="let member of project.team">
+                <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style=" margin: 25px; width:150px;height:150px;"
+                  alt="Circle Image">
+                <div class="caption">
+                  <p> {{member.name}} {{member.lastname}} </p>
+                </div>
+              </div>
+              <div class="thumbnail" *ngFor="let member of project.team">
+                <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style=" margin: 25px; width:150px;height:150px;"
+                  alt="Circle Image">
+                <div class="caption">
+                  <p> {{member.name}} {{member.lastname}} </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
