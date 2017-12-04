@@ -20,23 +20,25 @@
                                                'text-primary': project.status === 'On-going'}">{{project.status}}</p>
             </span>
           </div>
-          <div class="container col-md-5 text-center">
+          <div class="container col-md-4 text-center">
             <h3>Team members:</h3>
-            <div class="avatar d-flex flex-wrap">
+            <br>
+            <div class="avatar d-flex flex-wrap justify-content-between">
               <div class="thumbnail" *ngFor="let member of project.team">
-                <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style=" margin: 25px; width:150px;height:150px;"
+                <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style="border:2px solid darkgrey; width:150px;height:150px;"
                   alt="Circle Image">
                 <div class="caption">
                   <p> {{member.name}} {{member.lastname}} </p>
+                  <br>
                 </div>
               </div>
               <div class="thumbnail" *ngFor="let member of project.team">
-                <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style=" margin: 25px; width:150px;height:150px;"
-                  alt="Circle Image">
-                <div class="caption">
-                  <p> {{member.name}} {{member.lastname}} </p>
+                  <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style="border:2px solid darkgrey; width:150px;height:150px;"
+                    alt="Circle Image">
+                  <div class="caption">
+                    <p> {{member.name}} {{member.lastname}} </p>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
