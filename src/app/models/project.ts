@@ -8,7 +8,6 @@ export class Project {
     status: string;
     name: string ;
     type: string ;
-    manager: string;
     reservations: Reservations [];
     toDoLists: ToDoLists [] ;
     team: Members[];

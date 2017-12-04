@@ -33,13 +33,11 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 1,
         name: 'Something something techies',
         description: 'on suicide watch',
-        manager: 'Some guy',
         status: 'On-going'
       },
       {
         id: 2,
         name: 'Pls work',
-        manager: 'promocode: BSJ',
         status: 'Done',
         description: 'You have reached Dennaton Enterprises, we can\'t take your call at the moment. Please leave a message after the beep and we\'ll get back to you. ',
         team: [
@@ -72,7 +70,6 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 3,
         name: 'isa tool 2',
-        manager: 'another retard',
         status: 'Dropped',
         team: [
           {
@@ -104,7 +101,6 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 4,
         name: 'isa tool',
-        manager: 'a retard',
         status: 'Halted',
         team: [
           {
