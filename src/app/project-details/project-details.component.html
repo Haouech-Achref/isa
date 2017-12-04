@@ -1,10 +1,42 @@
-
-        <h3>Project details</h3>
-
+<div class="nav-tabs-navigation">
+    <div class="nav-tabs-wrapper">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Summary</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#profile" role="tab">TO-DO</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Reservations</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Settings</a>
+                <ul class="dropdown-menu ">
+                    <div class="dropdown-header" data-toggle="tab" href="#action">Header</div>
+                    <a  class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="tab-content">
+    <div class="tab-pane active" id="home" role="tabpanel">
       <div class="row">
-        <label for="projectname">Project name:</label>
-        <input id="projectname" class="form-group" value="{{project.manager}}" disabled>
+        <dl class="dl-horizontal">
+            <dt>Title:</dt>
+            <dd>{{project.name}}</dd>
+            <dt>Status:</dt>
+            <dd>{{project.status}}</dd>
+            <dt>Description:</dt>
+            <dd>{{project.description}}</dd>
+        </dl>
+        <div>smth</div>
       </div>
-
-  
-  
+    </div>
+    <div class="tab-pane" id="profile" role="tabpanel">Here is your profile.</div>
+    <div class="tab-pane" id="messages" role="tabpanel">Here are your messages.</div>
+    <div class="tab-pane" id="action" role="tabpanel">Vestibulum ex velit, cursus in mauris in, egestas tempor orci.</div>
+    <div class="tab-pane" id="another-action" role="tabpanel">Ut sem metus, lacinia id lobortis vel, mollis ut quam.</div>
+</div> 

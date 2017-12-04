@@ -13,14 +13,12 @@ import { Location } from '@angular/common';
 })
 export class ProjectDetailsComponent implements OnInit {
 
-  project: Project = new Project();
+  @Input() project: Project;
 
   constructor(private projectService: ProjectService,
     private route: ActivatedRoute, ) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.projectService.getProject(id).forEach(project => this.project = project);
   }
 
 }

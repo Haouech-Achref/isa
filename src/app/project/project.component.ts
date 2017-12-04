@@ -35,11 +35,16 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class ProjectComponent implements OnInit {
 
   projects: Project[];
+  selectedProject: Project;
+  selected = false;
 
+  selectProject(project: Project) {
+    this.selectedProject = project;
+    }
   constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
-    this.projectService.getProjects().forEach(project => this.projects = project);
+    this.projectService.getProjects().subscribe(project =>{ this.projects = project; this.selectedProject = this.projects[0]; this.selected = true; });
   }
 
 }
