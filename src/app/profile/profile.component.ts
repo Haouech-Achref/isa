@@ -1,3 +1,4 @@
+import { Project } from '../models/project';
 import { MemberService } from './../services/member/member.service';
 import { ActivatedRoute } from '@angular/router';
 import { Members } from '../models/members';
@@ -37,6 +38,71 @@ import {
 })
 export class ProfileComponent implements OnInit {
   member: Members;
+  project = [
+    {
+      id: 2,
+      name: 'Pls work',
+      status: 'Done',
+      description: 'You have reached Dennaton Enterprises, we can\'t take your call at the moment. Please leave a message after the beep and we\'ll get back to you. ',
+      team: [
+        {
+          id: 11,
+          name: 'Achref',
+          lastname: 'Haouech',
+          description: 'Retard at work.',
+          level: '3',
+          phone: 3251,
+          section: 'GL',
+          manageteams: [],
+          email: 'haouech@outlook.com',
+          password: 'somepass',
+          role: 'webmaster'
+        },
+        {
+          id: 12,
+          name: 'Narco',
+          lastname: 'torj',
+          level: '3',
+          phone: 3250,
+          section: 'GL',
+          manageteams: [],
+          email: 'haouech@gmail.com',
+          password: 'someotherpass'
+        }
+      ]
+    },
+    {
+      id: 3,
+      name: 'isa tool 2',
+      status: 'Dropped',
+      team: [
+        {
+          id: 11,
+          name: 'Achref',
+          lastname: 'Haouech',
+          description: 'Retard at work.',
+          level: '3',
+          phone: 3251,
+          section: 'GL',
+          manageteams: [],
+          email: 'haouech@outlook.com',
+          password: 'somepass',
+          role: 'webmaster'
+        },
+        {
+          id: 12,
+          name: 'Narco',
+          lastname: 'torj',
+          level: '3',
+          phone: 3250,
+          section: 'GL',
+          manageteams: [],
+          email: 'haouech@gmail.com',
+          password: 'someotherpass'
+        }
+      ]
+    },
+  ]
   state = true;
   statelogin = false;
   toggleState() {

@@ -4,7 +4,7 @@
   </div>
   <div *ngFor="let project of projects; let i = index;">
     <div class="section" [ngClass]="{'section-dark': i % 2 === 0}">
-      <div class="container">
+      <div class="container" [@divState] >
         <div class="row ">
           <div class="col-md-5 text-center d-flex justify-content-between" style="flex-direction: column">
             <span>

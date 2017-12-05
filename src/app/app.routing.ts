@@ -1,3 +1,4 @@
+import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { SigninComponent } from './home/signin/signin.component';
 import { ProjectComponent } from './project/project.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
-import { ProjectDetailsComponent } from 'app/project-details/project-details.component';
 
 const routes: Routes = [
     { path: 'home',             component: HomeComponent },
@@ -18,6 +18,7 @@ const routes: Routes = [
     { path: 'signup',           component: SignupComponent },
     { path: 'landing',          component: LandingComponent },
     { path: 'projects',      component: ProjectComponent },
+    { path: 'project/:id',    component: ProjectDetailsComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
