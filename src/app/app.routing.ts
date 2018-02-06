@@ -1,3 +1,4 @@
+import { HardwareComponent } from './hardware/hardware.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { SigninComponent } from './home/signin/signin.component';
 import { ProjectComponent } from './project/project.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
     { path: 'landing',          component: LandingComponent },
     { path: 'projects',      component: ProjectComponent },
     { path: 'project/:id',    component: ProjectDetailsComponent},
+    { path: 'hardware',    component: HardwareComponent},
     { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

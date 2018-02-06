@@ -4,11 +4,12 @@
           </div>
     <div  *ngIf="project" class="container" [@divState]>
         <div class="row ">
-            <div class="text-center d-flex justify-content-between" style="flex-direction: column">
+            <div class="text-center d-flex justify-content-center" style="flex-direction: column">
                 <span>
                     <h1 class="title">{{project.name}}</h1>
-                    <p class="description">{{project.description}}</p>
-
+                </span>
+                <span>
+                        <p class="description">{{project.description}}</p>
                 </span>
                 <span>
                     <h3>Status:</h3>

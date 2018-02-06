@@ -19,6 +19,9 @@
                                                'text-success': project.status === 'Done',
                                                'text-primary': project.status === 'On-going'}">{{project.status}}</p>
             </span>
+            <span>
+              <button class="btn btn-primary" routerLink="/project/{{project.id}}"> Details </button>
+            </span>
           </div>
           <div class="container col-md-4 text-center">
             <h3>Team members:</h3>

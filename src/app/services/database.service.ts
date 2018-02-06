@@ -32,7 +32,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {
         id: 1,
         name: 'Something something techies',
-        description: 'on suicide watch',
+        description: '',
         status: 'On-going'
       },
       {

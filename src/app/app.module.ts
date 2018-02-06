@@ -20,6 +20,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HomeModule } from './home/home.module';
 import { ProjectComponent } from './project/project.component';
 import { ProjectDetailsComponent } from './project-details/project-details.component';
+import { HardwareComponent } from './hardware/hardware.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
     FooterComponent,
     ProjectComponent,
     ProjectDetailsComponent,
+    HardwareComponent,
   ],
   imports: [
     BrowserModule,
