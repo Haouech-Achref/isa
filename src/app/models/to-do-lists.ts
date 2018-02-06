@@ -1,5 +1,6 @@
-export class ToDoLists {
-    id : number;
-    done: boolean;
-    value : string ;
+export class ToDo {
+    id: number;
+    status: string;
+    description: string ;
+    deadline: Date;
 }

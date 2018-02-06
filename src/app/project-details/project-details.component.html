@@ -2,9 +2,9 @@
         <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/project.jpg');">
             <div class="filter"></div>
           </div>
-    <div class="container" [@divState]>
+    <div  *ngIf="project" class="container" [@divState]>
         <div class="row ">
-            <div class="col-md-5 text-center d-flex justify-content-between" style="flex-direction: column">
+            <div class="text-center d-flex justify-content-between" style="flex-direction: column">
                 <span>
                     <h1 class="title">{{project.name}}</h1>
                     <p class="description">{{project.description}}</p>
@@ -17,10 +17,7 @@
                                                'text-success': project.status === 'Done',
                                                'text-primary': project.status === 'On-going'}">{{project.status}}</p>
                 </span>
-            </div>
-            <div class="container col-md-4 text-center">
                 <h3>Team members:</h3>
-                <br>
                 <div class="avatar d-flex flex-wrap justify-content-between">
                     <div class="thumbnail" *ngFor="let member of project.team">
                         <img src="../assets/img/profile_pictures/achrefhaouech.jpg" class="img-circle img-responsive" style="border:2px solid darkgrey; width:150px;height:150px;"
@@ -39,6 +36,32 @@
                     </div>
                 </div>
             </div>
+            <div class="container">
+                <table class="table">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>#</th>
+                        <th>Description</th>
+                        <th>Deadline</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let todo of project.todo">
+                        <td>{{todo.id}}</td>
+                        <td>{{todo.description}}</td>
+                        <td>{{todo.deadline}}</td>
+                        <td>{{todo.status}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
         </div>
+    </div>
+    <div class="container content-center" *ngIf="!project">
+            <div class="alert alert-danger" role="alert">
+                   <h1> Unknown Project </h1>
+                  </div>
+                  
     </div>
 </div>

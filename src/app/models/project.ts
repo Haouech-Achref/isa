@@ -1,6 +1,6 @@
 import { Members } from './members';
 import { Reservations } from './reservations';
-import { ToDoLists } from './to-do-lists';
+import { ToDo } from './to-do-lists';
 
 export class Project {
     id: number ;
@@ -9,6 +9,6 @@ export class Project {
     name: string ;
     type: string ;
     reservations: Reservations [];
-    toDoLists: ToDoLists [] ;
+    toDo: ToDo [] ;
     team: Members[];
 }

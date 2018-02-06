@@ -65,6 +65,29 @@ export class InMemoryDataService implements InMemoryDbService {
             email: 'haouech@gmail.com',
             password: 'someotherpass'
           }
+        ],
+        todo: [
+          {
+            id: 1,
+            status: 'On-going',
+            description: 'Polish profile page',
+            deadline: '2017-06-01',
+
+          },
+          {
+            id: 2,
+            status: 'Done',
+            description: 'Play darkest dungeon',
+            deadline: '2018-08-01',
+
+          },
+          {
+            id: 3,
+            status: 'Dropped',
+            description: 'Add equipment page',
+            deadline: '2017-06-30',
+
+          },
         ]
       },
       {
