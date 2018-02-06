@@ -2,7 +2,23 @@
     <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('../assets/img/hardware.jpg');">
       <div class="filter"></div>
     </div>
+
     <div class="container">
+        <div>
+            <h3>
+                Available hardware
+                <small class="text-muted">Use the search bar to filter results</small>
+              </h3>
+              <hr>
+              <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-secondary" type="button"> Search </button>
+                  </div>
+              </div>
+          
+        </div>
+        <br>
         <table class="table table-hover">
             <thead class="thead-dark">
               <tr>
@@ -14,11 +30,11 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td> 1 </td>
-                <td></td>
-                <td></td>
-                <td></td>
+              <tr *ngFor="let hardware of hardwares">
+                <td> {{hardware.id}} </td>
+                <td> {{hardware.name}} </td>
+                <td> {{hardware.description}} </td>
+                <td> {{hardware.quantity}} </td>
                 <th><span>
                     <button class="btn btn-danger"> Remove </button>
                     <button class="btn btn-primary"> Modify </button>

@@ -28,6 +28,21 @@ export class InMemoryDataService implements InMemoryDbService {
         password: 'someotherpass'
       }
     ];
+    const hardware = [
+      {
+        id: 1,
+        name: 'VR headset',
+        description: 'You know what a VR headset is. Fuck off.',
+        quantity: 1,
+
+      },
+      {
+        id: 2,
+        name: 'Galaxy S7',
+        description: 'a phone used for things.',
+        quantity: 3,
+      }
+    ];
     const projects = [
       {
         id: 1,
@@ -153,6 +168,6 @@ export class InMemoryDataService implements InMemoryDbService {
         ]
       }
     ];
-    return { members, projects };
+    return { members, projects, hardware };
   }
 }

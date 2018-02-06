@@ -1,9 +1,8 @@
 import { Reservations } from './reservations';
-export class Equipements {
+export class Hardware {
     id : number ;
-    nom : string ;
-    reference : string;
-    type : string;
+    name : string ;
+    description: string;
     reservations : Reservations [];
 
 }

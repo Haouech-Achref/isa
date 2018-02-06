@@ -1,4 +1,4 @@
-import { Equipements } from './Equipements';
+import { Hardware } from './Hardware';
 import { Project } from './Project';
 
 export class Reservations {
@@ -6,7 +6,7 @@ export class Reservations {
     date_debut : String ;
     date_fin : String ;
 
-    equipements : Equipements[];
+    hardware : Hardware[];
     projects : Project[];
 
 }
